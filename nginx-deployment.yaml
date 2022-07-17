@@ -31,12 +31,12 @@ spec:
           protocol: TCP
           name: http
         volumeMounts:
-            - name: nginx-conf
-              mountPath: /etc/ngnix/conf.d
+        - name: nginx-confmap
+          mountPath: /etc/ngnix/conf.d
       volumes:
       - name: nginx-conf
         configMap:
           name: nginx-confmap
           items:
-            - key: default.conf
-              path: default.conf
+          - key: default.conf
+            path: default.conf
